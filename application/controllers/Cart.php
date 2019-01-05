@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowd');
-
 class Cart extends CI_Controller
 {
     function __construct()
