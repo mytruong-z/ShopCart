@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/bootstrap.min.css"); ?>">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="<?php echo base_url("assets/js/bootstrap.min.js"); ?>"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
     .cart{
@@ -15,9 +16,6 @@
         margin-top: 20px;
         margin-right: 20px;
         color: white;
-    }
-    .containermar{
-        margin-top: 100px;
     }
     .footer-actions-container {
         width: 100%;
@@ -40,8 +38,8 @@
     .nav{
         height: 80px;
     }
-    .header{
-        position: fixed;
+    .conmar{
+        margin-top: 100px;
     }
     .footera{
         text-align: center;
@@ -60,6 +58,19 @@
     .footer-copyright{
         background-color: #1f1d1d;
     }
+    .lgGap{
+        margin-top: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .logo{
+        margin-top: 80px;
+        height: 150px;
+    }
+
+
+
 </style>
 <body>
 <div>
@@ -76,14 +87,25 @@
         <h2 id="mfs" style="color: white;font-family: 'American Typewriter';text-align: center ;">M Y F A S H I O N</h2>
     </nav>
 </div>
+<div class="container">
+    <div class="col-lg-5"></div>
+    <div class="logo text-center col-lg-2">
+                <a href="<?php echo base_url("products/") ?>" >
+                    <img class="lg active lgGap rounded" height="100px" width="100px" src="http://localhost/ShopCart/uploads/lgGap.png"></a>
+
+    </div>
+    <div class="col-lg-5"></div>
+</div>
+
 <div class="bg" id="bg">
 
 </div>
+
 <script>
     $(document).ready(function () {
         $("#bg").click(function () {
             $("#bg").slideUp();
-            $(".container").addClass("containermar");
+            $("#conmar").addClass("conmar");
         });
     });
 </script>
@@ -91,7 +113,7 @@
 <div class="container">
 
 <!-- List all products -->
-<div class="row">
+<div class="row" id="conmar">
     <div class="col-lg-12">
         <?php if(!empty($products)){ foreach($products as $row){ ?>
             <div class="col-sm-4 col-lg-4 col-md-4">

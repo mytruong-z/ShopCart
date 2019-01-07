@@ -103,7 +103,8 @@
                     </td>
                     <td><?php echo $item["name"]; ?></td>
                     <td><?php echo '$'.$item["price"].' USD'; ?></td>
-                    <td><input type="number" name="numberProduct" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
+                    <td><input type="number" name="numberCart" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')">
+                        <?php echo form_error('numberCart','<p class="help-block error">','</p>'); ?></td>
                     <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
                     <td>
                         <a href="<?php echo base_url('cart/removeItem/'.$item["rowid"]); ?>" class="btn btn-danger" onclick="return confirm('Delete Product?')"><i class="glyphicon glyphicon-trash"></i></a>

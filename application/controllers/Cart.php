@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowd');
+
 class Cart extends CI_Controller
 {
     function __construct()
@@ -7,6 +8,8 @@ class Cart extends CI_Controller
         parent::__construct();
         $this->load->library('cart');
         $this->load->model('product');
+        $this->load->library('form_validation');
+        $this->load->helper(array('form','url'));
     }
     function index()
     {
@@ -17,9 +20,10 @@ class Cart extends CI_Controller
     function updateItemQty()
     {
         $update = 0;
-        $rowid = $this->input->get('rowid');
-        $qty = $this->input->get('qty');
-        if(!empty($rowid)&&!empty($qty)){
+            $rowid = $this->input->get('rowid');
+            $qty = $this->input->get('qty');
+
+        if(!empty($rowid)&&!empty($qty) &&($qty > 0)){
             $data = array(
                 'rowid'=>$rowid,
                 'qty'=>$qty
